@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecuación Cuadrática</title>
+</head>
+
+<body>
+    <h1>Fórmula General/Ecuaciones Cuadráticas</h1>
+    <div>
+        <script>
+            alert("Vamos a realizar ecuaciones cuadráticas. ¿Okey? necesito que respondas lo siguiente con números")
+            document.write("Realizar una ecuación cuadrática mediante código de JavaScript. Debe tener 3 posibles soluciones:")
+        </script>
+        <div>
+            <script>
+                document.write("La primera es discriminante>0, la cual, tendrá 2 resultados distintos")
+            </script>
+        </div>
+        <div>
+            <script>
+                document.write("La segunda es Discriminante=0, la cual, nos permite ver que solo habrá respuesta única en ambas x")
+            </script>
+        </div>
+        <div>
+            <script>
+                document.write("la tercera es discriminante<0, la cual, nos indica que no tendrá soluciones")
+            </script>
+        </div>
+    </div>
+
+    <div>
+        <script>
+            //Nombramos variables
+            // var nombre variable= prompt("texto")
+            var a = prompt("Ingrese el valor de a:");
+            var b = prompt("Ingrese el valor de b:");
+            var c = prompt("Ingrese el valor de c");
+            //var nombre variable = math.pow (variable b, número exponente) - (4 * variable a * variable c)
+            //math.pow sirve para hacer exponente a un número
+            // si es mayor a 0, habrá dos respuestas distintas
+            // si es igual a 0, habrá una respuesta identica en ambas x (x1 y x2), osea, tienen una única solución
+            var discriminante = Math.pow(b, 2) - (4 * a * c);
+
+            //Empezamos a usar condicionales como if debido a que tenemos más de una respuesta y quiero respuesta de todas
+            //if significa si, condicional a y b
+            if (discriminante > 0) {
+                // var nombre variable= (-variable b + Math.Sqrt (discriminante)) / (2*variable a)
+                //mat sqrt es únicamente la raiz cuadrada
+                //Discriminante va adentro porque ya se realizo la operación al calcular el determinante y solo se hace lo restante
+                //Las variables están definidas en las mismas operaciones
+                var x1 = (-b + Math.sqrt(discriminante)) / (2 * a);
+                //Haremos lo mismo pero versión negativa
+                var x2 = (-b - Math.sqrt(discriminante)) / (2 * a);
+                //document write es para que se imprima la información que fue procesada, que en este caso fue de x2
+                document.write("La respuesta de x1 es:" + x1);
+                //document write es para que se imprima la información que fue procesada, que en este caso fue de x2
+                document.write("------la respuesta del x2 es:" + x2);
+            }
+            //tiene que tener si o si los 3 iguales debido a que hace que sea la opción verdadera o falsa
+            else if (discriminante === 0) {
+                //La raiz se elimina ya que fue 0
+                // Se hace la operación de afuera de la raiz
+                // var x= -variable b / (2* variable a)
+                //Las variables están definidas en las mismas operaciones
+                var x = -b / (2 * a);
+                document.write("La solución es: " + x);
+                //si no es ninguna de estas dos, no tiene soluciones reales
+            } else {
+                // No hay soluciones reales
+                document.write("No hay soluciones reales.");
+            }
+        </script>
+    </div>
